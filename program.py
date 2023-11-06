@@ -817,7 +817,9 @@ class TabText():
         elif selected_syntax.lower() == "python":
             self.text_area.tag_delete("keyword")
             self.text_area.tag_configure("keyword", foreground="#BE90B7")
-            keywords = ["if", "elif", "else", "for", "while", "def", "class", "import", "from", "return", "except", "try", "await", "async", "as", "raise", 'in', 'with', 'and', 'or', 'break', 'pass']
+            keywords = [
+'include','pub','fn','macro','print','return','while','if','elsif','else'
+]
 
             content = self.text_area.get("1.0", tk.END)
             pattern = r'(\b(?:' + '|'.join(map(re.escape, keywords)) + r')\b)|\n'
